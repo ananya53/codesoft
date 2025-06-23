@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cooking Class Landing Page</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #fffaf5;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff704d;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 18px;
+      margin: 10px 0 20px;
+    }
+
+    .btn {
+      background-color: white;
+      color: #ff704d;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #ff704d;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .section ul {
+      padding-left: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 250px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-form button {
+      background-color: #ff704d;
+      color: white;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffe6e0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Learn to Cook Delicious Food at Home!</h1>
+    <p>Join fun and easy cooking classes online or in-person.</p>
+    <a href="#contact" class="btn">Join a Class</a>
+  </header>
+
+  <div class="section">
+    <h2>About the Class</h2>
+    <ul>
+      <li>Easy Indian dishes (roti, curry, biryani)</li>
+      <li>Baking basics (cakes, cookies)</li>
+      <li>Healthy meals (salads, smoothies)</li>
+      <li>Snacks and street food</li>
+    </ul>
+    <p><strong>No experience needed.</strong> Classes are perfect for beginners!</p>
+  </div>
+
+  <div class="section">
+    <h2>Class Details</h2>
+    <ul>
+      <li><strong>Days:</strong> Monday to Friday</li>
+      <li><strong>Time:</strong> Morning or Evening slots</li>
+      <li><strong>Type:</strong> Online Zoom or In-person</li>
+      <li><strong>Location:</strong> Mumbai (for offline)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Fees</h2>
+    <ul>
+      <li>1 Week Trial: ₹199</li>
+      <li>Monthly Plan: ₹999</li>
+      <li>Group Discounts Available</li>
+    </ul>
+    <a href="#contact" class="btn">Book Your Spot</a>
+  </div>
+
+  <div class="section">
+    <h2>What You Need</h2>
+    <ul>
+      <li>Basic kitchen tools (spoon, knife, pan)</li>
+      <li>Ingredients list will be shared</li>
+      <li>Mobile or computer with internet (for online)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Why Join Us?</h2>
+    <ul>
+      <li>Step-by-step video and voice lessons</li>
+      <li>Ask questions live</li>
+      <li>Fun for all ages</li>
+      <li>Certificate after completion</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Meet the Chef</h2>
+    <p>Hi! I’m <strong>Chef Ananya</strong>, a home chef with 5+ years of experience. I love teaching simple and tasty recipes to people of all ages!</p>
+  </div>
+
+  <div class="section gallery">
+    <h2>Gallery / Reviews</h2>
+    <img src="https://images.unsplash.com/photo-1606788075761-24567e9dc1b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=250" alt="Cooking Class 1">
+    <img src="https://images.unsplash.com/photo-1590080876099-278a49a6e75c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=250" alt="Cooking Class 2">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=250" alt="Cooking Class 3">
+    <p>“I never cooked before, now I make dinner daily!” – Priya</p>
+    <p>“Loved the baking class. So much fun!” – Ramesh</p>
+  </div>
+
+  <div class="section" id="contact">
+    <h2>Contact / Join Now</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <select required>
+        <option value="">Preferred Class Time</option>
+        <option>Morning</option>
+        <option>Evening</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+    <p>📲 Or <a href="https://wa.me/91XXXXXXXXXX" target="_blank">Chat on WhatsApp</a></p>
+  </div>
+
+  <footer>
+    © 2025 Cooking With Love – All Rights Reserved.
+  </footer>
+
+</body>
+</html>
