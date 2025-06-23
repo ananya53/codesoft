@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            width: 320px;
+            background: #000;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .history {
+            background: #eee;
+            padding: 10px;
+            font-size: 16px;
+            color: #333;
+            height: 100px;
+            overflow-y: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .history div {
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .history div:last-child {
+            border-bottom: none;
+        }
+        .display {
+            background: #fff;
+            color: #000;
+            font-size: 28px;
+            padding: 15px;
+            text-align: right;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 10px;
+        }
+        .numbers, .functions {
+            display: grid;
+            gap: 10px;
+        }
+        .numbers {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .functions {
+            grid-template-columns: 1fr;
+        }
+        .btn {
+            padding: 18px;
+            font-size: 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .number-btn {
+            background: #ccc;
+        }
+        .number-btn:hover {
+            background: #bbb;
+        }
+        .function-btn {
+            background: #add8e6;
+        }
+        .function-btn:hover {
+            background: #90c6e6;
+        }
+        .zero-btn {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="history" id="history"></div>
+        <div class="display" id="display">0</div>
+        <div class="button-grid">
+            <div class="numbers">
+                <button class="btn number-btn" onclick="appendValue('7')">7</button>
+                <button class="btn number-btn" onclick="appendValue('8')">8</button>
+                <button class="btn number-btn" onclick="appendValue('9')">9</button>
+                <button class="btn number-btn" onclick="appendValue('4')">4</button>
+                <button class="btn number-btn" onclick="appendValue('5')">5</button>
+                <button class="btn number-btn" onclick="appendValue('6')">6</button>
+                <button class="btn number-btn" onclick="appendValue('1')">1</button>
+                <button class="btn number-btn" onclick="appendValue('2')">2</button>
+                <button class="btn number-btn" onclick="appendValue('3')">3</button>
+                <button class="btn number-btn zero-btn" onclick="appendValue('0')">0</button>
+                <button class="btn number-btn" onclick="appendValue('.')">.</button>
+            </div>
+            <div class="functions">
+                <button class="btn function-btn" onclick="appendValue('+')">+</button>
+                <button class="btn function-btn" onclick="appendValue('-')">−</button>
+                <button class="btn function-btn" onclick="appendValue('*')">×</button>
+                <button class="btn function-btn" onclick="appendValue('/')">÷</button>
+                <button class="btn function-btn" onclick="calculate()">=</button>
+                <button class="btn function-btn" onclick="clearDisplay()">C</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById("display");
+        let history = document.getElementById("history");
+        let currentInput = "";
+
+        function appendValue(value) {
+            if (currentInput === "0" && value !== ".") currentInput = "";
+            currentInput += value;
+            display.textContent = currentInput;
+        }
+        function clearDisplay() {
+            currentInput = "";
+            display.textContent = "0";
+        }
+        function calculate() {
+            try {
+                let result = eval(currentInput);
+                let record = ${currentInput} = ${result};
+                history.innerHTML += <div>${record}</div>;
+                display.textContent = result;
+                currentInput = result.toString();
+            } catch {
+                display.textContent = "Error";
+                currentInput = "";
+            }
+        }
+    </script>
+</body>
+</html>
